@@ -1,17 +1,30 @@
 aid: 88rising
 name: 88rising
-description: '88rising is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: '88rising (stylized 88 with a rising arrow) is an American mass media company
+  and record label founded in 2015 by Sean Miyashiro, headquartered in Los Angeles and New
+  York with a division in Shanghai. It describes itself as a hybrid management, record label,
+  video production and marketing company, and is known for building a global platform for
+  Asian and Asian American artists including Rich Brian, NIKI, Joji and Keith Ape. Beyond
+  recorded music it operates the Head in the Clouds festival franchise and the 88 Night
+  Market live and commerce brand. It is a media and entertainment company rather than a
+  software company: it publishes no developer program, no public API documentation and no
+  machine-readable specifications.'
 url: https://raw.githubusercontent.com/api-evangelist/88rising/refs/heads/main/apis.yml
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/88rising_logo.svg/1200px-88rising_logo.svg.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Media
+- Entertainment
+- Music
+- Record Label
+- Live Events
+- Content
+- Marketing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +32,48 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/88rising-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/88rising-stock
+  url: https://88rising.com/
+- type: PrivacyPolicy
+  url: https://88rising.com/privacy-policy
+- type: TermsOfService
+  url: https://88rising.com/terms-of-service
+- type: LinkedIn
+  url: https://www.linkedin.com/company/88rising
+- type: Twitter
+  url: https://twitter.com/88rising/
+- type: Youtube
+  url: https://www.youtube.com/@88rising
+- type: Instagram
+  url: https://www.instagram.com/88rising/
+- type: Facebook
+  url: https://www.facebook.com/88rising/
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/88rising
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    88rising is a record label and mass media company, not a software vendor — the only
+    publicly reachable API on any of its hosts is the undocumented Strapi v4 CMS backend
+    at api.88rising.com/api that renders its own Angular website (five anonymous read
+    endpoints: /cards, /footer, /privacy-policy, /terms-of-service, /findOneShopify),
+    and every /openapi.json, /swagger.json, /documentation and /.well-known/ probe
+    against that host returned a genuine JSON 404.
+  evidence:
+  - url: https://api.88rising.com/openapi.json
+    status: 404
+  - url: https://api.88rising.com/documentation/v1.0.0/swagger.json
+    status: 404
+  - url: https://api.88rising.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.github.com/orgs/88rising
+    status: 404
+  checked: '2026-08-06'

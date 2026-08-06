@@ -1,0 +1,72 @@
+generated: '2026-08-06'
+method: probed
+source: live GET probes of every 88rising host reachable without credentials
+found: 0
+summary: >-
+  No /.well-known/ document is published on any 88rising host. The API host returns a
+  real JSON 404 for every well-known path. The website host answers HTTP 200 for every
+  path — including paths that cannot exist — because it is an Angular single-page app
+  with a catch-all; those 200s are soft-404s and are NOT recorded as hits.
+hosts:
+- host: https://api.88rising.com
+  note: Strapi v4 headless CMS (Heroku). Returns a genuine JSON 404 body for unknown paths.
+  soft_404: false
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://88rising.com
+  note: >-
+    Angular SPA catch-all. Every probed path returned HTTP 200 with an identical
+    4935-byte text/html body, byte-for-byte equal to a deliberately invalid control
+    path (/control-path-does-not-exist-9f3a2b). Treated as 404 for all purposes.
+  soft_404: true
+  control_path: /control-path-does-not-exist-9f3a2b
+  control_bytes: 4935
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/openid-configuration
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/agent-card.json
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+  - path: /.well-known/agent.json
+    status: 200
+    verdict: soft-404
+    content_type: text/html
+x-evidence:
+  fetched: '2026-08-06'
+  method: HTTP GET, no credentials
+  note: >-
+    No pointer is wired into apis.yml for this artifact because nothing was found.
+    The file exists to record the negative result and the soft-404 behaviour of the
+    website host so a later run does not falsely credit a 200.
