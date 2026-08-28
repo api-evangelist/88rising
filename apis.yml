@@ -10,6 +10,17 @@ description: '88rising (stylized 88 with a rising arrow) is an American mass med
   software company: it publishes no developer program, no public API documentation and no
   machine-readable specifications.'
 url: https://raw.githubusercontent.com/api-evangelist/88rising/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/88rising_logo.svg/1200px-88rising_logo.svg.png
 x-type: company
 x-source: harvest:secondary-market
