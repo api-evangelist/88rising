@@ -10,6 +10,9 @@ description: '88rising (stylized 88 with a rising arrow) is an American mass med
   software company: it publishes no developer program, no public API documentation and no
   machine-readable specifications.'
 url: https://raw.githubusercontent.com/api-evangelist/88rising/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "It is a media and entertainment company rather than a software company: it publishes no developer program, no public API documentation and no machine-readable specifications."
 deliveryModel:
   model: saas
   open_source: false
