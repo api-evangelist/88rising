@@ -41,7 +41,7 @@ x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.23'
 created: '2026-08-06'
-modified: '2026-08-06'
+modified: '2026-10-06'
 tags:
 - Company
 - Media
@@ -58,6 +58,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://88rising.com/blog/
+  type: Blog
 - type: DomainSecurity
   url: security/88rising-domain-security.yml
 - type: Website
